@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "RegistrarUsuario";
+}
+<head>
+    <title>Registro de usuarios </title>
+</head>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="#">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+@using (Html.BeginForm())
+{
+
+    <body>
+        <h2>Ingresa Tus Credenciales</h2>
+        <div>
+            <h3>Datos del usuario </h3>
+            <form action="/" method="post">
+                <label>Rut: <input type="text" name="rut" value=" " /></label><br />
+                <label>Nombre: <input type="text" name="nombre" value=" " /></label><br />
+                <label>Apellido: <input type="text" name="apellido" value=" " /></label><br />
+                <label>Email: <input type="text" name="email" value=" " /></label><br />
+                <label>Contraseña: <input type="text" name="contraseña" value=" " /></label><br />
+                @*<input type="submit" name="enviar" value="Enviar" />*@
+                <button>Ingresar</button>
+            </form>
+        </div>
+    </body>
+
+}
+
+

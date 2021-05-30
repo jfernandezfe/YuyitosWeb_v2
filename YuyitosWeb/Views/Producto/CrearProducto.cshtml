@@ -1,0 +1,64 @@
+﻿@model YuyitosWeb.Negocio.Producto
+@{
+    ViewBag.Title = "CrearProducto";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Ingresar Nuevo Producto</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(p => p.Nombre_producto)
+    @Html.TextBoxFor(p => p.Nombre_producto)
+    <br />
+    @Html.LabelFor(p => p.Descripcion)
+    @Html.TextBoxFor(p => p.Descripcion)
+    <br />
+    @Html.LabelFor(p => p.Precio_compra)
+    @Html.TextBoxFor(p => p.Precio_compra)
+    <br />
+    @Html.LabelFor(p => p.Precio_venta)
+    @Html.TextBoxFor(p => p.Precio_venta)
+    <br />
+    @Html.LabelFor(p => p.Fecha_elab)
+    @Html.TextBoxFor(p => p.Fecha_elab)
+    <br />
+    @Html.LabelFor(p => p.Fecha_venc)
+    @Html.TextBoxFor(p => p.Fecha_venc)
+    <br />
+    @Html.LabelFor(p => p.Stock)
+    @Html.TextBoxFor(p => p.Stock)
+    <br />
+    @Html.LabelFor(p => p.Stock_critico)
+    @Html.TextBoxFor(p => p.Stock_critico)
+    <br />
+    @Html.LabelFor(p => p.MarcaId, "Marca")
+    @Html.TextBoxFor(p => p.Marca, new SelectList(ViewBag.Marca, "Id_marca", "Nombre_marca"))
+    <br />
+    @Html.LabelFor(p => p.TipoId, "Tipo")
+    @Html.TextBoxFor(p => p.TipoId, new SelectList(ViewBag.tipos, "Id_tipo", "Nombre_tipo", "SubfamiliaId"))
+    <br />
+    @Html.LabelFor(p => p.ProveedorId, "Proveedor")
+    @Html.DropDownListFor(p => p.ProveedorId, new SelectList(ViewBag.proveedores, "Rut_proveedor", "Nombre_Proveedor"))
+    <br />
+    <button>Guardar</button>
+}

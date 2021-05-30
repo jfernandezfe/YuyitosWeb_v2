@@ -1,0 +1,39 @@
+﻿@model YuyitosWeb.Negocio.Tipo_producto
+@{
+    ViewBag.Title = "CrearTipoProducto";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Ingresar Nuevo Tipo de Producto</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(t => t.Nombre_tipo)
+    @Html.TextBoxFor(t => t.Nombre_tipo)
+    <br />
+    @Html.LabelFor(t => t.SubfamiliaId, "Subfamilia")
+    @Html.DropDownListFor(t => t.SubfamiliaId, new SelectList(ViewBag.subfamilias, "Id_subfamilia", "Nombre_subfamilia", "Familia_id"))
+    <br />
+    <button>Guardar</button>
+
+}<div>
+    @Html.Partial("CrearTipoProducto")
+</div>

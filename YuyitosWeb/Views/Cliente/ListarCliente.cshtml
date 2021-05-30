@@ -1,0 +1,62 @@
+﻿@using YuyitosWeb.Negocio;
+@{
+    ViewBag.Title = "ListarCliente";
+}
+
+<h2>Lista de Clientes</h2>
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+@{ List<Cliente> clientes = (List<Cliente>)ViewBag.clientes;}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Rut</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Telefono</td>
+        <td>Email</td>
+        <td>Direccion</td>
+        <td>Fiado</td>
+        <td>Comuna</td>
+        <td>Region</td>
+        <td>ID Venta</td>
+    </tr>
+    @foreach (var cliente in clientes)
+    {
+        <tr>
+            <td>@cliente.Rut_cliente</td>
+            <td>@cliente.Nombre_cliente</td>
+            <td>@cliente.Apellido_cliente</td>
+            <td>@cliente.Telefono</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Direccion</td>
+            <td>@cliente.Fiado</td>
+            <td>@cliente.Comuna.Nombre_comuna</td>
+            <td>@cliente.Region.Nombre_region</td>
+            <td>@cliente.VentaId</td>
+        </tr>
+    }
+
+
+
+</table>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c784587755e14a28b395659d7853c7ed" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="Model1.BOLETA" Width="1.5" PointX="23.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.CLIENTE" Width="1.5" PointX="7.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.CODIGO_PRODUCTO" Width="1.5" PointX="17.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.COMUNA" Width="1.5" PointX="5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.FAMILIA_PRODUCTO" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.FIADO" Width="1.5" PointX="9.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.MARCA" Width="1.5" PointX="13.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.ORDEN_PEDIDO" Width="1.5" PointX="12.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.PRODUCTO" Width="1.5" PointX="15.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.PROVEEDOR" Width="1.5" PointX="10.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.RECEPCION" Width="1.5" PointX="20.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.REGION" Width="1.5" PointX="5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.REGISTRO_VENTAS" Width="1.5" PointX="20.375" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.RUBRO" Width="1.5" PointX="8" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.SUBFAMILIA" Width="1.5" PointX="11" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.TIPO_PRODUCTO" Width="1.5" PointX="13.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.USUARIO" Width="1.5" PointX="5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="Model1.VENTAS_F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.CLIENTE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.COMUNA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.REGION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.VENTAS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.CODIGO_PROD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.COMUNA_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.FAM_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.MARCA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ORDEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.ORDEN_PEDIDO_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.PRODUCTO_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.PRODUCTO_FKV2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.TIPO_PROD_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.REGION_FKV1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.RUBRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model1.SUBFAM_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,54 @@
+﻿@using YuyitosWeb.Negocio;
+@{
+    ViewBag.Title = "ListarOrdenes";
+}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+<h2>Listado de Ordenes</h2>
+
+@{ List<Orden_pedido> ordenes = (List<Orden_pedido>)ViewBag.ordenes;}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Id_orden</td>
+        <td>Fecha_pedido</td>
+        <td>Cantidad</td>
+        <td>Estado</td>
+        <td>Producto</td>
+        <td>Proveedor</td>
+
+    </tr>
+    @foreach (var orden in ordenes)
+    {
+        <tr>
+            <td>@orden.Id_pedido</td>
+            <td>@orden.Fecha_pedido</td>
+            <td>@orden.Cantidad</td>
+            <td>@orden.Estado</td>
+            <td>@orden.Producto.Nombre_producto</td>
+            <td>@orden.Proveedor.Nombre_proveedor</td>
+        </tr>
+    }
+
+</table>
+<ul class="nav navbar-nav">
+    <li><a class="badge" href="/Orden_pedido/CrearOrden/">Nueva Orden</a></li>
+</ul>
+
+@TempData["mensaje"];

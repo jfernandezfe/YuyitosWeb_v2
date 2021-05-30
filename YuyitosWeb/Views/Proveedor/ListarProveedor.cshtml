@@ -1,0 +1,63 @@
+﻿@using YuyitosWeb.Negocio;
+@{
+    ViewBag.Title = "ListarProveedor";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h2>ListarProveedor</h2>
+
+@{ List<Proveedor> proveedores = (List<Proveedor>)ViewBag.proveedores;}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Rut</td>
+        <td>Nombre</td>
+        <td>Telefono</td>
+        <td>Correo</td>
+        <td>Razon Social</td>
+        <td>Direccion</td>
+        <td>Rubro</td>
+        <td>Comuna</td>
+        <td>Region</td>
+    </tr>
+    @foreach (var proveedor in proveedores)
+    {
+        <tr>
+            <td>@proveedor.Rut_proveedor</td>
+            <td>@proveedor.Nombre_proveedor</td>
+            <td>@proveedor.Telefono</td>
+            <td>@proveedor.Email</td>
+            <td>@proveedor.Razon_social</td>
+            <td>@proveedor.Direccion</td>
+            <td>@proveedor.Rubro.Nombre_rubro</td>
+            <td>@proveedor.Comuna.Nombre_comuna</td>
+            <td>@proveedor.Region.Nombre_region</td>
+        </tr>
+    }
+
+
+
+</table>
+<ul class="nav navbar-nav">
+    <li><a class="badge" href="/Proveedor/CrearProveedor/">Nuevo Proveedor</a></li>
+</ul>
+
+@TempData["mensaje"]

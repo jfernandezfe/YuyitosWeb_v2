@@ -1,0 +1,58 @@
+﻿@using YuyitosWeb.Negocio
+@{
+    ViewBag.Title = "ListarBoleta";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Lista de Boleta</h2>
+
+@{ List<Boleta> boletas = (List<Boleta>)ViewBag.boletas;}
+
+<table class="table table-bordered">
+    <tr>
+        <td>Numero Boleta</td>
+        <td>Producto</td>
+        <td>Precio</td>
+        <td>Cantidad</td>
+        <td>Total</td>
+        <td>Fecha</td>
+        <td>Id de Venta</td>
+    </tr>
+    @foreach (var boleta in boletas)
+    {
+        <tr>
+            <td>@boleta.N_boleta</td>
+            <td>@boleta.Producto</td>
+            <td>@boleta.Precio</td>
+            <td>@boleta.Cantidad</td>
+            <td>@boleta.Total</td>
+            <td>@boleta.Fecha</td>
+            <td>@boleta.VentasId</td>
+        </tr>
+    }
+
+
+
+</table>
+
+@TempData["mensaje"]
+
+

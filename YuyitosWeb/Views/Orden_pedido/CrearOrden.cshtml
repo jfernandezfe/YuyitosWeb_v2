@@ -1,0 +1,48 @@
+﻿@model YuyitosWeb.Negocio.Orden_pedido
+@{
+    ViewBag.Title = "CrearOrden";
+}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+<h2>Crear nueva Orden</h2>
+
+
+
+@using (Html.BeginForm())
+{   
+
+    @Html.LabelFor(o => o.Fecha_pedido)
+    @Html.TextBoxFor(o => o.Fecha_pedido)
+    <br />
+    @Html.LabelFor(o => o.Cantidad)
+    @Html.TextBoxFor(o => o.Cantidad)
+    <br />
+    @Html.LabelFor(o => o.Estado)
+    @Html.TextBoxFor(o => o.Estado)
+    <br />
+    @Html.LabelFor(o => o.ProductoId, "Producto")
+    @Html.DropDownListFor(o => o.ProductoId, new SelectList(ViewBag.productos, "Id_producto", "Nombre_producto"))
+    <br />
+    @Html.LabelFor(o => o.ProveedorId, "Proveedor")
+    @Html.DropDownListFor(o => o.ProveedorId, new SelectList(ViewBag.proveedores, "Rut_proveedor", "Nombre_Proveedor"))
+    <br />
+    <button>Guardar</button>
+}
+
+

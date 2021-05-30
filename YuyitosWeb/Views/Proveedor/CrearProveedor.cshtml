@@ -1,0 +1,57 @@
+﻿@model YuyitosWeb.Negocio.Proveedor
+@{
+    ViewBag.Title = "CrearProveedor";
+}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+            <li><a href="/Cliente/ListarCliente">Clientes</a></li>
+            <li><a href="/Producto/ListarProducto">Productos</a></li>
+            <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+            <li><a href="/Ventas/ListarVentas">Ventas</a></li>
+            <li><a href="/Orden_pedido/ListarOrdenes">Orden de Pedidos</a></li>
+            <li><a href="/Recepcion/ListarRecepcion">Recepcion de Pedidos</a></li>
+            <li><a href="/Boleta/ListarBoleta">Administración de boletas</a></li>
+            <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h2>Ingresar Proveedor</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(p => p.Rut_proveedor)
+    @Html.TextBoxFor(p => p.Rut_proveedor)
+    <br />
+    @Html.LabelFor(p => p.Nombre_proveedor)
+    @Html.TextBoxFor(p => p.Nombre_proveedor)
+    <br />
+    @Html.LabelFor(p => p.Telefono)
+    @Html.TextBoxFor(p => p.Telefono)
+    <br />
+    @Html.LabelFor(p => p.Email)
+    @Html.TextBoxFor(p => p.Email)
+    <br />
+    @Html.LabelFor(p => p.Razon_social)
+    @Html.TextBoxFor(p => p.Razon_social)
+    <br />
+    @Html.LabelFor(p => p.Direccion)
+    @Html.TextBoxFor(p => p.Direccion)
+    <br />
+    @Html.LabelFor(p => p.RubroId, "Rubro")
+    @Html.DropDownListFor(p => p.RubroId, new SelectList(ViewBag.rubros, "Id_rubro", "Nombre_rubro"))
+    <br />
+    @Html.LabelFor(p => p.ComunaId, "Comuna")
+    @Html.DropDownListFor(p => p.ComunaId, new SelectList(ViewBag.comunas, "Id_comuna", "Nombre_comuna"))
+    <br />
+    @Html.LabelFor(p => p.RegionId, "Region")
+    @Html.DropDownListFor(p => p.RegionId, new SelectList(ViewBag.regiones, "Id_region", "Nombre_region"))
+    <br />
+    <button>Guardar</button>
+}

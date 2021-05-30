@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "PagoFiado";
+}
+
+<head>
+    <title>Registro Pago de fiados </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/Home/Index" class="navbar-brand">Yuyitos Web</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Proveedor/ListarProveedor/">Proveedores</a></li>
+                <li><a href="/Cliente/AdministracionCliente">Clientes</a></li>
+                <li><a href="/Producto/ListarProductos">Productos</a></li>
+                <li><a href="/Fiado/PagoFiado">Fiado</a></li>
+                <li><a href="/Venta/ListarVenta">Ventas</a></li>
+                <li><a href="#">Orden de Pedidos</a></li>
+                <li><a href="#">Recepcion de Pedidos</a></li>
+                <li><a href="#">Administración de boletas</a></li>
+                <li><a href="/Usuario/RegistrarUsuario">Registro de usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <h3>Datos </h3>
+        <form action="/" method="post">
+            <label>Id Fiado: <input type="text" name="idFiado" value=" " /></label><br />
+            <label>Rut Cliente: <input type="text" name="rutC" value=" " /></label><br />
+            <label>Nombre Cliente: <input type="text" name="nombreC" value=" " /></label><br />
+            <label>Estado: <input type="text" name="estado" value=" " /></label><br />
+            <label>Fecha fiado: <input type="text" name="fechaFiado" value=" " /></label><br />
+            <label>Nombre Producto: <input type="text" name="nombreProducto" value=" " /></label><br />
+            <label>Valor Producto: <input type="text" name="ValorProducto" value=" " /></label><br />
+            <label>Cantidad: <input type="text" name="cantidad" value=" " /></label><br />
+            <label>Total: <input type="text" name="total" value=" " /></label><br />
+            <input type="submit" name="enviar" value="Enviar" /> <input type="button" name="listar" value="Listar" />
+        </form>
+    </div>
+</body>
+
